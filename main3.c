@@ -16,7 +16,7 @@ void print_mat()
 		}
 		printf("\n");
 	}
-	sleep(2);
+	sleep(1);
 	system("cls");
 }
 
