@@ -44,34 +44,47 @@ int main()
 			{
 				for( i=1 ; i<=16 ; i++)
 				{
-					if( i%4===0 )
-			       		 k++;
-			        if( j=3 ) 
-			        {
-			       		while(j>=0)
-			       			j--;
-					}
-					else if( j=2 ) 
-			        {
-			       		while(j>=0)
-			       			j--;
-					}
-					else if( j=1 ) 
-			        {
-			       		while(j>=0)
-			       			j--;
-					}
-			        	j++;
 					for( row_mat=0; row_mat<4 ; row_mat++)
 					{
 						for( column_mat=0; column_mat<4 ; column_mat++)
 						{
 								mat[row_mat][column_mat]=star;
-								mat[m][n]=pacman;
-								m=m+k;    n=n+j;
+								mat[k][j]=pacman;
 						}
 					}
 					print_mat();
+					if( i%4==0 )     //		change			//
+			       	    k++;		 //		   k			//
+			       	if(i==1)
+			       		j++;
+			       	if(i==2)
+			       		j++;
+			       	if(i==3)
+			       		j++;
+			    	if(i==4)  //**
+			       		j--;
+			       	if(i==5)
+			       		j--;
+			       	if(i==6)
+			       		j--;
+					if(i==7)
+			       		j--;
+					if(i==8)//**
+			       		j++;
+					if(i==9)
+			       		j++;
+					if(i==10)
+			       		j++;
+					if(i==11)
+			       		j++;
+					if(i==12)//**
+			       		j--;
+			   	    if(i==13)
+			       		j--;
+			       	if(i==14)
+			       		j--;
+			       	if(i==15)
+			       		j--;
 				}
 			}
 			
