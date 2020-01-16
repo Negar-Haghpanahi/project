@@ -202,14 +202,16 @@ int main()
 			}
 			else
 			{
-				for(row=0; row<4 ; row++)
+				if(arry[0][0]=='*' || arry[0][1]=='*' || arry[0][2]=='*' || arry[0][3]=='*')
 				{
-					for(column=0; column<4 ; column++ )
+					if(arry[0][1]!='#')   
 					{
-						
+						arry[0][0]='1'; arry[0][1]='0';
+						print_mat();
 					}
 				}
+				
 			}
 			
-		}
+}
 
