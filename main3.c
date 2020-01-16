@@ -22,9 +22,9 @@ void print_mat()
 
 int main() 
 {
-	int  row_mat , column_mat , i , num_food=0 , flag=0 , m=0 , n=0, k=0 , j=0;
+	int  row_mat , column_mat , i , num_food=0 , flag=0 , m=0 , n=0, k=0 , j=0, row=0, column=0;
 	char address_file[100] , position;
-	char str[4] , pacman='0' , star='*';
+	char str[4] , pacman='0' , star='*', arry[4][4];
 	FILE  *ptf1;
 	printf("HELLO :) , if you want me to play pacman for you , plesae write the name of your file.\n");
 	scanf("%S", address_file);
@@ -35,11 +35,19 @@ int main()
 		{
 			position=getchar();
 			while( position!=EOF ) 
-			{
+			{ 
+				for (i=0; i<4 ; i++)
+				{
+					for(j=0; j<4 ; j++)
+					{
+						arry[i][j]=positoin;
+					}
+				}
 				if( position=='*')
 					num_food++;
 				position=getchar();
 			}
+			i=0;  j=0;
 			if( num_food==16)
 			{
 				for( i=1 ; i<=16 ; i++)
@@ -163,9 +171,10 @@ int main()
 						}
 					}
 					print_mat();
-					if( i%4==0 )     //		change			//
-			       	    k++;		 //		   k			//
-			       	if(i==1)
+					if( i%4==0 )     //	 ** change k	**	//
+			       	    k++;		 
+			       	    		
+			       	if(i==1)		//	**	chnge j		**	//
 			       		j++;
 			       	if(i==2)
 			       		j++;
@@ -191,6 +200,16 @@ int main()
 			       		j--;
 				}
 			}
+			else
+			{
+				for(row=0; row<4 ; row++)
+				{
+					for(column=0; column<4 ; column++ )
+					{
+						
+					}
+				}
+			}
 			
 		}
-}
+
