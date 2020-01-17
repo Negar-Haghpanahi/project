@@ -22,7 +22,7 @@ void print_mat()
 
 int main() 
 {
-	int  row_mat , column_mat , i , num_food=0 , flag=0 , m=0 , n=0, k=0 , j=0, row=0, column=0;
+	int  row_mat , column_mat , i , num_food=0 , flag=0 , m=0 , n=0, k=0 , j=0, row=1, column=1;
 	char address_file[100] , position;
 	char str[4] , pacman='0' , star='*', arry[4][4];
 	FILE  *ptf1;
@@ -40,7 +40,7 @@ int main()
 				{
 					for(j=0; j<4 ; j++)
 					{
-						arry[i][j]=positoin;
+						arry[i][j]=position;
 					}
 				}
 				if( position=='*')
@@ -168,7 +168,7 @@ int main()
 								mat[row_mat][column_mat]='1';
 						}		
 							
-						}
+					}
 					}
 					print_mat();
 					if( i%4==0 )     //	 ** change k	**	//
@@ -204,11 +204,31 @@ int main()
 			{
 				if(arry[0][0]=='*' || arry[0][1]=='*' || arry[0][2]=='*' || arry[0][3]=='*')
 				{
-					if(arry[0][1]!='#')   
+					while (arry[0][column]!='#' && column <=3 )   
 					{
-						arry[0][0]='1'; arry[0][1]='0';
-						print_mat();
+						arry[0][column-1]='1';    arry[0][column]='0';
+						column++;
+						print_mat();	
 					}
+					if(column==3 && arry[1][3]!='#')		  
+		   			{
+				    	arry[0][3]='1';    arry[1][column]='0';
+						print_mat();	
+					}
+					if(column==3 && arry[1][3]=='#')
+					{
+						arry[0][2]='0';  arry[0][3]='1';
+						print_mat();
+						if(arry[1][2]!='#')
+						{
+							arry[1][2]='0';  arry[0][2]='1';
+							print_mat();
+						}
+					}	
+				}
+				if(arry[1][0]=='*' || arry[1][1]=='*' || arry[1][2]=='*' || arry[1][3]=='*')
+				{
+					
 				}
 				
 			}
