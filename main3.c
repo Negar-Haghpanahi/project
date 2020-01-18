@@ -34,7 +34,7 @@ int main()
 	else 
 		{
 			position=getc();
-			while( position!=EOF ) 
+			while( feof(ptf1)==0 ) 
 			{ 
 				for (i=0; i<4 ; i++)
 				{
