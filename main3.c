@@ -33,7 +33,7 @@ int main()
 		printf("This file can not be opened !! \n");
 	else 
 		{
-			position=getchar();
+			position=getc();
 			while( position!=EOF ) 
 			{ 
 				for (i=0; i<4 ; i++)
@@ -45,7 +45,7 @@ int main()
 				}
 				if( position=='*')
 					num_food++;
-				position=getchar();
+				position=getc();
 			}
 			i=0;  j=0;
 			if( num_food==16)
