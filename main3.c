@@ -200,7 +200,7 @@ int main()
 			       		j--;
 				}
 			}
-			else
+			if (num_food!=16)
 			{
 				if(arry[0][0]=='*' || arry[0][1]=='*' || arry[0][2]=='*' || arry[0][3]=='*')
 				{
@@ -209,6 +209,11 @@ int main()
 						arry[0][column-1]='1';    arry[0][column]='0';
 						column++;
 						print_mat();	
+					}
+					if(arry[0][1]=='#')
+					{
+						arry[1][0]='0';       arry[0][0]='1';
+						print_mat();
 					}
 					if(column==3 && arry[1][3]!='#')		  
 		   			{
