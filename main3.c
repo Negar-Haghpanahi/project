@@ -33,7 +33,7 @@ int main()
 		printf("This file can not be opened !! \n");
 	else 
 		{
-			position=getc();
+			fscanf(ptf1,"%c ",position);
 			while( feof(ptf1)==0 ) 
 			{ 
 				for (i=0; i<4 ; i++)
@@ -45,7 +45,7 @@ int main()
 				}
 				if( position=='*')
 					num_food++;
-				position=getc();
+				fscanf(ptf1,"%c ",position);
 			}
 			i=0;  j=0;
 			if( num_food==16)
@@ -200,43 +200,76 @@ int main()
 			       		j--;
 				}
 			}
-			if (num_food!=16)
-			{
-				if(arry[0][0]=='*' || arry[0][1]=='*' || arry[0][2]=='*' || arry[0][3]=='*')
-				{
-					while (arry[0][column]!='#' && column <=3 )   
-					{
-						arry[0][column-1]='1';    arry[0][column]='0';
-						column++;
-						print_mat();	
-					}
-					if(arry[0][1]=='#')
-					{
-						arry[1][0]='0';       arry[0][0]='1';
-						print_mat();
-					}
-					if(column==3 && arry[1][3]!='#')		  
-		   			{
-				    	arry[0][3]='1';    arry[1][column]='0';
-						print_mat();	
-					}
-					if(column==3 && arry[1][3]=='#')
-					{
-						arry[0][2]='0';  arry[0][3]='1';
-						print_mat();
-						if(arry[1][2]!='#')
-						{
-							arry[1][2]='0';  arry[0][2]='1';
-							print_mat();
-						}
-					}	
-				}
-				if(arry[1][0]=='*' || arry[1][1]=='*' || arry[1][2]=='*' || arry[1][3]=='*')
-				{
-					
-				}
-				
+//			if (num_food!=16)
+//			{
+//				if(arry[0][0]=='*' || arry[0][1]=='*' || arry[0][2]=='*' || arry[0][3]=='*')
+//				{
+//					while (arry[0][column]!='#' && column <=3 )   
+//					{
+//						arry[0][column-1]='1';    arry[0][column]='0';
+//						column++;
+//						print_mat();	
+//					}
+//					if(arry[0][1]=='#')
+//					{
+//						arry[1][0]='0';       arry[0][0]='1';
+//						print_mat();			column=0;
+//					}
+//					if(column==3 && arry[1][3]!='#')		  
+//		   			{
+//				    	arry[0][3]='1';    arry[1][column]='0';
+//						print_mat();		column=3;
+//					}
+//					if(column==3 && arry[1][3]=='#')
+//					{
+//						arry[0][2]='0';  arry[0][3]='1';
+//						print_mat();		column=2;
+//						if(arry[1][2]!='#')
+//						{
+//							arry[1][2]='0';  arry[0][2]='1';
+//							print_mat();		column=2;
+//						}
+//					}	
+//				}
+//				else 
+//				{
+//					if(arry[1][0]!='#')
+//					{
+//						arry[0][0]='1'; arry[1][0]='0'
+//						print_mat();     flag=1;	column=1;
+//					}
+//				}
+//				if(arry[1][0]=='*' || arry[1][1]=='*' || arry[1][2]=='*' || arry[1][3]=='*')
+//				{
+//					while (arry[1][column]!='#' && column <=3 )   
+//					{
+//						arry[0][column-1]='1';    arry[0][column]='0';
+//						column++;
+//						print_mat();	
+//					}
+//					if(arry[1][1]=='#')
+//					{
+//						arry[2][0]='0';       arry[1][0]='1';
+//						print_mat();
+//					}
+//					if(column==3 && arry[2][3]!='#')		  
+//		   			{
+//				    	arry[1][3]='1';    arry[2][column]='0';
+//						print_mat();	
+//					}
+//					if(column==3 && arry[1][3]=='#')
+//					{
+//						arry[1][2]='0';  arry[1][3]='1';
+//						print_mat();
+//						if(arry[3][2]!='#')
+//						{
+//							arry[2][2]='0';  arry[3][2]='1';
+//							print_mat();
+//						}
+//					}	
+//				}
+//				
 			}
 			
-}
+
 
